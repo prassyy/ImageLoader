@@ -21,24 +21,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func fetch(_ sender: Any) {
-        if let imageOneUrl = URL(string: "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/3/39/AoU_Iron_Man_Mk43_art.png"),
-            let imageOne = try? UIImage(data: Data(contentsOf: imageOneUrl)) {
-            imageViewOne.image = imageOne
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let imageOneUrl = URL(string: "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/3/39/AoU_Iron_Man_Mk43_art.png"),
+                let imageOne = try? UIImage(data: Data(contentsOf: imageOneUrl)) {
+                self.imageViewOne.image = imageOne
+            }
         }
         
-        if let imageTwoUrl = URL(string: "https://akns-images.eonline.com/eol_images/Entire_Site/2017920/rs_1080x1920-171020123522-1080.thor-ragnarok-4.102017.jpg"),
-            let imageTwo = try? UIImage(data: Data(contentsOf: imageTwoUrl)) {
-            imageViewTwo.image = imageTwo
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let imageTwoUrl = URL(string: "https://akns-images.eonline.com/eol_images/Entire_Site/2017920/rs_1080x1920-171020123522-1080.thor-ragnarok-4.102017.jpg"),
+                let imageTwo = try? UIImage(data: Data(contentsOf: imageTwoUrl)) {
+                self.imageViewTwo.image = imageTwo
+            }
         }
         
-        if let imageThreeUrl = URL(string: "https://s1.r29static.com//bin/entry/d0d/0,0,1999,2399/1090x1308,80/1588304/image.jpg"),
-            let imageThree = try? UIImage(data: Data(contentsOf: imageThreeUrl)) {
-            imageViewThree.image = imageThree
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let imageThreeUrl = URL(string: "https://s1.r29static.com//bin/entry/d0d/0,0,1999,2399/1090x1308,80/1588304/image.jpg"),
+                let imageThree = try? UIImage(data: Data(contentsOf: imageThreeUrl)) {
+                self.imageViewThree.image = imageThree
+            }
         }
         
-        if let imageFourUrl = URL(string: "https://vignette.wikia.nocookie.net/disney/images/f/fc/AoU_Hulk_01.png"),
-            let imageFour = try? UIImage(data: Data(contentsOf: imageFourUrl)) {
-            imageViewFour.image = imageFour
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let imageFourUrl = URL(string: "https://vignette.wikia.nocookie.net/disney/images/f/fc/AoU_Hulk_01.png"),
+                let imageFour = try? UIImage(data: Data(contentsOf: imageFourUrl)) {
+                self.imageViewFour.image = imageFour
+            }
         }
     }
     
